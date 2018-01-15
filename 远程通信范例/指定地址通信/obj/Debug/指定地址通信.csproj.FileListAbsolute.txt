@@ -1,0 +1,14 @@
+D:\C#工程\协议栈通信\指定地址通信\bin\Debug\指定地址通信.exe.config
+D:\C#工程\协议栈通信\指定地址通信\bin\Debug\指定地址通信.exe
+D:\C#工程\协议栈通信\指定地址通信\bin\Debug\指定地址通信.pdb
+D:\C#工程\协议栈通信\指定地址通信\bin\Debug\XNetSocketClient.dll
+D:\C#工程\协议栈通信\指定地址通信\obj\Debug\指定地址通信.csprojResolveAssemblyReference.cache
+D:\C#工程\协议栈通信\指定地址通信\obj\Debug\指定地址通信.exe
+D:\C#工程\协议栈通信\指定地址通信\obj\Debug\指定地址通信.pdb
+D:\与协议栈通信范例\协议栈通信\指定地址通信\bin\Debug\指定地址通信.exe.config
+D:\与协议栈通信范例\协议栈通信\指定地址通信\bin\Debug\指定地址通信.exe
+D:\与协议栈通信范例\协议栈通信\指定地址通信\bin\Debug\指定地址通信.pdb
+D:\与协议栈通信范例\协议栈通信\指定地址通信\bin\Debug\XNetSocketClient.dll
+D:\与协议栈通信范例\协议栈通信\指定地址通信\obj\Debug\指定地址通信.csprojResolveAssemblyReference.cache
+D:\与协议栈通信范例\协议栈通信\指定地址通信\obj\Debug\指定地址通信.exe
+D:\与协议栈通信范例\协议栈通信\指定地址通信\obj\Debug\指定地址通信.pdb

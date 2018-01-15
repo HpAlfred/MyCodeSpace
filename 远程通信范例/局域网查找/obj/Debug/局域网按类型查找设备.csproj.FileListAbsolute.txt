@@ -1,0 +1,7 @@
+D:\C#工程\协议栈通信\局域网按类型查找设备\bin\Debug\局域网按类型查找设备.exe.config
+D:\C#工程\协议栈通信\局域网按类型查找设备\bin\Debug\局域网按类型查找设备.exe
+D:\C#工程\协议栈通信\局域网按类型查找设备\bin\Debug\局域网按类型查找设备.pdb
+D:\C#工程\协议栈通信\局域网按类型查找设备\bin\Debug\XNetSocketClient.dll
+D:\C#工程\协议栈通信\局域网按类型查找设备\obj\Debug\局域网按类型查找设备.csprojResolveAssemblyReference.cache
+D:\C#工程\协议栈通信\局域网按类型查找设备\obj\Debug\局域网按类型查找设备.exe
+D:\C#工程\协议栈通信\局域网按类型查找设备\obj\Debug\局域网按类型查找设备.pdb

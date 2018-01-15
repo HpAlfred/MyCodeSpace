@@ -1,0 +1,11 @@
+D:\与协议栈通信范例\协议栈通信\4GBox_M通信\bin\Debug\4GBox_M通信.exe.config
+D:\与协议栈通信范例\协议栈通信\4GBox_M通信\bin\Debug\4GBox_M通信.exe
+D:\与协议栈通信范例\协议栈通信\4GBox_M通信\bin\Debug\4GBox_M通信.pdb
+D:\与协议栈通信范例\协议栈通信\4GBox_M通信\bin\Debug\Repackage.dll
+D:\与协议栈通信范例\协议栈通信\4GBox_M通信\bin\Debug\XNetSocketClient.dll
+D:\与协议栈通信范例\协议栈通信\4GBox_M通信\obj\Debug\4GBox_M通信.csprojResolveAssemblyReference.cache
+D:\与协议栈通信范例\协议栈通信\4GBox_M通信\obj\Debug\4GBox_M通信.exe
+D:\与协议栈通信范例\协议栈通信\4GBox_M通信\obj\Debug\4GBox_M通信.pdb
+D:\与协议栈通信范例—基于vs2012(含远程)(含4GBox_M)\与协议栈通信范例\协议栈通信\4GBox_M通信\bin\Debug\4GBox_M通信.exe.config
+D:\与协议栈通信范例—基于vs2012(含远程)(含4GBox_M)\与协议栈通信范例\协议栈通信\4GBox_M通信\obj\Debug\4GBox_M通信.exe
+D:\与协议栈通信范例—基于vs2012(含远程)(含4GBox_M)\与协议栈通信范例\协议栈通信\4GBox_M通信\obj\Debug\4GBox_M通信.pdb

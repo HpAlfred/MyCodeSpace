@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "自动查找", "自动查找", "{F4BC90EC-F9DA-44FA-81BA-FFEB290CBF18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "局域网查找", "局域网查找", "{11D373A4-AF9A-4525-91A5-2E2EAA7DADD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "远程通信", "远程通信", "{6D73B5A2-3663-4FFE-8F9D-7E6320700777}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "指定地址通信", "指定地址通信", "{A0852CC8-503B-4FEF-B183-A71D66B112F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "局域网查找设备通信", "局域网查找\局域网查找设备通信.csproj", "{EBDB0128-E8A8-40E2-8D46-F61DBA6C7DE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "远程通信", "远程通信\远程通信.csproj", "{5337A66A-A924-4DC5-B9AA-B0749E28A4DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "指定地址通信", "指定地址通信\指定地址通信.csproj", "{9525EACE-D387-4227-A811-DA4C6F4D3A25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "按类型自动查找通信", "自动查找\按类型自动查找通信.csproj", "{8D37EAAA-60FA-4A0D-8447-EC2DFF78E928}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D4706BA7-E73F-4BA8-A3F1-FC2898C1B212}"
+	ProjectSection(SolutionItems) = preProject
+		dll使用说明.txt = dll使用说明.txt
+		重要说明_一次读写不要超过500个寄存器或者8000个线圈.txt = 重要说明_一次读写不要超过500个寄存器或者8000个线圈.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4GBox_M通信", "4GBox_M通信", "{3819FADD-7A9B-4B87-9B4A-FD2F1AB47DF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4GBox_M通信", "4GBox_M通信\4GBox_M通信.csproj", "{ACA28741-C974-411C-8EC0-597BD140410C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBDB0128-E8A8-40E2-8D46-F61DBA6C7DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDB0128-E8A8-40E2-8D46-F61DBA6C7DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDB0128-E8A8-40E2-8D46-F61DBA6C7DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDB0128-E8A8-40E2-8D46-F61DBA6C7DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5337A66A-A924-4DC5-B9AA-B0749E28A4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5337A66A-A924-4DC5-B9AA-B0749E28A4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5337A66A-A924-4DC5-B9AA-B0749E28A4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5337A66A-A924-4DC5-B9AA-B0749E28A4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9525EACE-D387-4227-A811-DA4C6F4D3A25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9525EACE-D387-4227-A811-DA4C6F4D3A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9525EACE-D387-4227-A811-DA4C6F4D3A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9525EACE-D387-4227-A811-DA4C6F4D3A25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D37EAAA-60FA-4A0D-8447-EC2DFF78E928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D37EAAA-60FA-4A0D-8447-EC2DFF78E928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D37EAAA-60FA-4A0D-8447-EC2DFF78E928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D37EAAA-60FA-4A0D-8447-EC2DFF78E928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACA28741-C974-411C-8EC0-597BD140410C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACA28741-C974-411C-8EC0-597BD140410C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACA28741-C974-411C-8EC0-597BD140410C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACA28741-C974-411C-8EC0-597BD140410C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8D37EAAA-60FA-4A0D-8447-EC2DFF78E928} = {F4BC90EC-F9DA-44FA-81BA-FFEB290CBF18}
+		{EBDB0128-E8A8-40E2-8D46-F61DBA6C7DE7} = {11D373A4-AF9A-4525-91A5-2E2EAA7DADD0}
+		{5337A66A-A924-4DC5-B9AA-B0749E28A4DD} = {6D73B5A2-3663-4FFE-8F9D-7E6320700777}
+		{9525EACE-D387-4227-A811-DA4C6F4D3A25} = {A0852CC8-503B-4FEF-B183-A71D66B112F5}
+		{ACA28741-C974-411C-8EC0-597BD140410C} = {3819FADD-7A9B-4B87-9B4A-FD2F1AB47DF6}
+	EndGlobalSection
+EndGlobal

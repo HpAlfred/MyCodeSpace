@@ -1,0 +1,10 @@
+D:\CProject\BOX调试小公举\BOX调试小公举\bin\Debug\BOX调试小公举.exe.config
+D:\CProject\BOX调试小公举\BOX调试小公举\obj\Debug\BOX调试小公举.csprojResolveAssemblyReference.cache
+D:\CProject\BOX调试小公举\BOX调试小公举\obj\Debug\BOX调试小公举.Form1.resources
+D:\CProject\BOX调试小公举\BOX调试小公举\obj\Debug\BOX调试小公举.Properties.Resources.resources
+D:\CProject\BOX调试小公举\BOX调试小公举\obj\Debug\BOX调试小公举.csproj.GenerateResource.Cache
+D:\CProject\BOX调试小公举\BOX调试小公举\bin\Debug\BOX调试小公举.exe
+D:\CProject\BOX调试小公举\BOX调试小公举\bin\Debug\BOX调试小公举.pdb
+D:\CProject\BOX调试小公举\BOX调试小公举\bin\Debug\XNetSocketClient.dll
+D:\CProject\BOX调试小公举\BOX调试小公举\obj\Debug\BOX调试小公举.exe
+D:\CProject\BOX调试小公举\BOX调试小公举\obj\Debug\BOX调试小公举.pdb
