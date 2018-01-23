@@ -14,7 +14,8 @@ void LibXNetInit();
 void RegsToBuf( short * _regs, char * _buf, int _num );
 void BufToRegs(char * _buf,short * _regs, int _num);
 void CoilsToBuf(short * _coils, char * _buf, int _num);
-void BufToCoils(char * _buf,short * _coils, int _num);
+void BufToCoils(char * _buf,short * _coils,BYTE _startBit ,int _num);
+BOOL ConfigComPort(XNetComm _comm,BYTE _com);
 
 /* ******************************************************************************* *
  * Name			: XNetServerInit()
@@ -23,7 +24,7 @@ void BufToCoils(char * _buf,short * _coils, int _num);
  * Output		:
  * Note			: 
  * ******************************************************************************* */
-int XNetServerInit()
+int XNetAPI XNetServerInit()
 {
 	char path[100]; 
 	char path2[30]="\\XINJE\\XNET\\Config.ini";
@@ -78,17 +79,7 @@ int XNetServerInit()
 	return 0;
 }
 
-void LibXNetInit()
-{
-	int i;
-	InitializeCriticalSection( &CS_XNetComm );
-	for (i = 0; i < MaxLinkNum ; i++)
-	{//本身就是慢过程，不考虑把时间复杂度从n压榨到logn了
-		XNetCommCBArray[i].isfree = TRUE;
-	}
-}
-
-XNetComm XNetCommunication()
+XNetComm XNetAPI XNetCommunication()
 {
 	SOCKET sock;
 	struct sockaddr_in serviceAddr;
@@ -135,8 +126,7 @@ XNetComm XNetCommunication()
 	return -1;
 }
 
-
-BOOL SetupRemoteLink(XNetComm _comm,char* _id,char * _password)
+BOOL XNetAPI SetupRemoteLink(XNetComm _comm,char* _id,char * _password)
 {
 	SOCKET sock;
 	char sendBuf[61];
@@ -171,7 +161,7 @@ BOOL SetupRemoteLink(XNetComm _comm,char* _id,char * _password)
 		return -1;
 	}
 
-	switch (recvBuf[3])
+	switch (recvBuf[2])
 	{
 		case 0x00:
 			{
@@ -253,50 +243,7 @@ BOOL SetupRemoteLink(XNetComm _comm,char* _id,char * _password)
 	}
 }
 
-BOOL ConfigComPort(XNetComm _comm,BYTE _com)
-{
-	SOCKET sock;
-	char sendBuf[4];
-	char recvBuf[3];
-	if( XNetCommCBArray[_comm].isfree)
-	{
-		LastErrCode = InvalidComm;
-		return -1;
-	}
-	sock = XNetCommCBArray[_comm].sock;
-	sendBuf[0] = 0x00;
-	sendBuf[1] = 0x02;
-	sendBuf[2] = 0x81;
-	sendBuf[3] = _com;
-
-	if(send(sock,sendBuf,4,0)<=0)
-	{
-		LastErrCode = GetLastError();
-		closesocket(sock);
-		XNetCommCBArray[_comm].isfree = TRUE;
-		return -1;
-	}
-
-
-	if(recv(sock, recvBuf, 3, 0)<=0)
-	{
-		LastErrCode = GetLastError();
-		closesocket(sock);
-		XNetCommCBArray[_comm].isfree = TRUE;
-		return -1;
-	}
-
-	if(recvBuf[3]==0)
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-}
-
-int ComPortTypeFindDevice( XNetComm _comm, BYTE _com, BYTE _type, BYTE _series, BYTE _model )
+int XNetAPI ComPortTypeFindDevice( XNetComm _comm, BYTE _com, BYTE _type, BYTE _series, BYTE _model )
 {
 	SOCKET sock;
 	int len;
@@ -396,7 +343,7 @@ int ComPortTypeFindDevice( XNetComm _comm, BYTE _com, BYTE _type, BYTE _series, 
 
 }
 
-int AutoTypeFindDevice( XNetComm _comm, BYTE _type, BYTE _series, BYTE _model )
+int XNetAPI AutoTypeFindDevice( XNetComm _comm, BYTE _type, BYTE _series, BYTE _model )
 {
 	SOCKET sock;
 	int len;
@@ -488,7 +435,7 @@ int AutoTypeFindDevice( XNetComm _comm, BYTE _type, BYTE _series, BYTE _model )
 	}
 }
 
-int ComPortIDFindDevice( XNetComm _comm, BYTE _com, char* _id )
+int XNetAPI ComPortIDFindDevice( XNetComm _comm, BYTE _com, char* _id )
 {
 	SOCKET sock;
 	int len;
@@ -585,7 +532,7 @@ int ComPortIDFindDevice( XNetComm _comm, BYTE _com, char* _id )
 
 }
 
-int AutoIDFindDevice( XNetComm _comm, char* _id )
+int XNetAPI AutoIDFindDevice( XNetComm _comm, char* _id )
 {
 	SOCKET sock;
 	int len;
@@ -675,7 +622,7 @@ int AutoIDFindDevice( XNetComm _comm, char* _id )
 	}
 }
 
-int WriteRegs(XNetComm _comm,BYTE _regType,int _offSet,int _num,short * _writeRegs)
+int XNetAPI WriteRegs(XNetComm _comm,BYTE _regType,int _offSet,int _num,short * _writeRegs)
 {
 	char sendBuf[1500];
 	char recvBuf[3];
@@ -728,14 +675,14 @@ int WriteRegs(XNetComm _comm,BYTE _regType,int _offSet,int _num,short * _writeRe
 		return -1;
 	}
 
-	if(recvBuf[3] != 0)
+	if(recvBuf[2] != 0)
 	{
 		LastErrCode = CommuError;
 	}
-	return recvBuf[3];
+	return recvBuf[2];
 }
 
-int ReadRegs(XNetComm _comm,BYTE _regType,int _offSet,int _num,short * _readRegs)
+int XNetAPI ReadRegs(XNetComm _comm,BYTE _regType,int _offSet,int _num,short * _readRegs)
 {
 	char sendBuf[24];
 	char recvBufLen[2];
@@ -806,7 +753,7 @@ int ReadRegs(XNetComm _comm,BYTE _regType,int _offSet,int _num,short * _readRegs
 	return recvBuf[0];
 }
 
-int WriteCoils(XNetComm _comm,BYTE _coilType,int _offSet,int _num,short * _writeCoils)
+int XNetAPI WriteCoils(XNetComm _comm,BYTE _coilType,int _offSet,int _num,short * _writeCoils)
 {
 	char sendBuf[9000];
 	char recvBuf[3];
@@ -869,15 +816,15 @@ int WriteCoils(XNetComm _comm,BYTE _coilType,int _offSet,int _num,short * _write
 		return -1;
 	}
 
-	if(recvBuf[3] != 0)
+	if(recvBuf[2] != 0)
 	{
 		LastErrCode = CommuError;
 	}
-	return recvBuf[3];
+	return recvBuf[2];
 
 }
 
-int ReadCoils(XNetComm _comm,BYTE _coilType,int _offSet,int _num,short * _readCoil)
+int XNetAPI ReadCoils(XNetComm _comm,BYTE _coilType,int _offSet,int _num,short * _readCoil)
 {
 	char sendBuf[24];
 	char recvBufLen[2];
@@ -938,7 +885,7 @@ int ReadCoils(XNetComm _comm,BYTE _coilType,int _offSet,int _num,short * _readCo
 
 	if (recvBuf[0] == 0x00)
 	{
-		BufToCoils(&recvBuf[1],_readCoil, _num);
+		BufToCoils(&recvBuf[2],_readCoil,recvBuf[1], _num);
 	}
 	else
 	{
@@ -973,6 +920,7 @@ void BufToRegs(char * _buf,short * _regs, int _num)
 void CoilsToBuf(short * _coils, char * _buf, int _num)
 {
 	int i;
+	memset(_buf,0x00,_num);//必须先清零
 	for (i = 0; i < _num; i++)
 	{
 		BYTE value;
@@ -981,13 +929,72 @@ void CoilsToBuf(short * _coils, char * _buf, int _num)
 	}
 }
 
-void BufToCoils(char * _buf,short * _coils, int _num)
+void BufToCoils(char * _buf,short * _coils,BYTE _startBit, int _num)
 {
 	int i;
 	for (i = 0; i < _num; i++)
 	{
-		BYTE value;
+		BYTE value = 0x00;
+		if(_startBit != 0)
+		{
+			_startBit--;
+			continue;
+		}
 		value = (BYTE)(( _buf[(i / 8) ] >> (i % 8))&0x01);
 		_coils[i] = (short)value;
+	}
+}
+
+
+BOOL ConfigComPort(XNetComm _comm,BYTE _com)
+{
+	SOCKET sock;
+	char sendBuf[4];
+	char recvBuf[3];
+	if( XNetCommCBArray[_comm].isfree)
+	{
+		LastErrCode = InvalidComm;
+		return -1;
+	}
+	sock = XNetCommCBArray[_comm].sock;
+	sendBuf[0] = 0x00;
+	sendBuf[1] = 0x02;
+	sendBuf[2] = 0x81;
+	sendBuf[3] = _com;
+
+	if(send(sock,sendBuf,4,0)<=0)
+	{
+		LastErrCode = GetLastError();
+		closesocket(sock);
+		XNetCommCBArray[_comm].isfree = TRUE;
+		return -1;
+	}
+
+
+	if(recv(sock, recvBuf, 3, 0)<=0)
+	{
+		LastErrCode = GetLastError();
+		closesocket(sock);
+		XNetCommCBArray[_comm].isfree = TRUE;
+		return -1;
+	}
+
+	if(recvBuf[2]==0)
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+void LibXNetInit()
+{
+	int i;
+	InitializeCriticalSection( &CS_XNetComm );
+	for (i = 0; i < MaxLinkNum ; i++)
+	{//本身就是慢过程，不考虑把时间复杂度从n压榨到logn了
+		XNetCommCBArray[i].isfree = TRUE;
 	}
 }

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibXNet", "LibXNet\LibXNet.vcxproj", "{3516B7E0-B9AB-4759-9337-4B92A5BB100A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "通信范例", "通信范例\通信范例.vcxproj", "{3A58AA07-BFAF-4902-82CF-63403FBC75C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,12 @@ Global
 		{3516B7E0-B9AB-4759-9337-4B92A5BB100A}.Release|Win32.ActiveCfg = Release|Win32
 		{3516B7E0-B9AB-4759-9337-4B92A5BB100A}.Release|Win32.Build.0 = Release|Win32
 		{3516B7E0-B9AB-4759-9337-4B92A5BB100A}.Release|Win32.Deploy.0 = Release|Win32
+		{3A58AA07-BFAF-4902-82CF-63403FBC75C2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3A58AA07-BFAF-4902-82CF-63403FBC75C2}.Debug|Win32.Build.0 = Debug|Win32
+		{3A58AA07-BFAF-4902-82CF-63403FBC75C2}.Debug|Win32.Deploy.0 = Debug|Win32
+		{3A58AA07-BFAF-4902-82CF-63403FBC75C2}.Release|Win32.ActiveCfg = Release|Win32
+		{3A58AA07-BFAF-4902-82CF-63403FBC75C2}.Release|Win32.Build.0 = Release|Win32
+		{3A58AA07-BFAF-4902-82CF-63403FBC75C2}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

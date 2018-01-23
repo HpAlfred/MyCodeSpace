@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #define XNetComm int
+#define XNetAPI
 
 #define ServiceInstallationError       1
 #define FailedToStartService           2
@@ -39,5 +40,51 @@ typedef struct XNetCommCB_Struct
 	WORD     net;
 	WORD     station;
 }XNetCommCB;
+
+
+typedef	enum
+{
+	X = 1 ,
+	Y = 2 ,
+	M = 3 ,
+	S = 4 ,
+	T = 5 ,
+	C = 6 ,
+	ET = 7 ,
+	HM = 8 ,
+	HS = 9 ,
+	HT = 10 ,
+	HC = 11 ,
+	HSC = 12 ,
+	SM = 13 ,
+	SSM = 14 ,
+	TG = 15 ,
+	HTG = 16 ,
+	PF = 17 ,
+	SEM = 18 ,
+	STG = 19,//add 2016.4.8
+	HSTG = 20,
+}CoilType;
+
+typedef	enum
+{
+	D = 128 ,
+	TD = 129 ,
+	CD = 130 ,
+	SD = 131 ,
+	ETD = 133 ,
+	ID = 134 ,
+	QD = 135 ,
+	HD = 136 ,
+	HTD = 137 ,
+	HCD = 138 ,
+	HSCD = 139 ,
+	HSD = 140 ,
+	FD = 141 ,
+	SFD = 142 ,
+	SSFD = 143 ,
+	SSD = 144 ,
+	FS = 145,
+}RegType;
 
 #define MaxLinkNum 200
