@@ -1,0 +1,13 @@
+﻿生成启动时间为 2018/1/23 9:44:09。
+     1>项目“D:\MyProject\MyCodeSpace\LibXNet\LibXNet\LibXNet.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         H:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D LIBXNET_EXPORTS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt LibXNet.c
+         LibXNet.c
+       Lib:
+         H:\Program Files\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\MyProject\MyCodeSpace\LibXNet\Debug\LibXNet.lib" /NOLOGO Debug\LibXNet.obj
+         LibXNet.vcxproj -> D:\MyProject\MyCodeSpace\LibXNet\Debug\LibXNet.lib
+     1>已完成生成项目“D:\MyProject\MyCodeSpace\LibXNet\LibXNet\LibXNet.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.50
